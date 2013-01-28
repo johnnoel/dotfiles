@@ -3,7 +3,7 @@ call pathogen#infect()
 
 set nocompatible
 set hidden
-set history=10000
+set history=100
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -12,13 +12,14 @@ set autoindent
 set laststatus=2
 "set showmatch
 set incsearch
-set hlsearch
+set nohlsearch
 set ignorecase smartcase
 set cursorline
 set cmdheight=2
 set showtabline=2
 set number
 set numberwidth=5
+set colorcolumn=80
 set shell=bash
 set switchbuf=useopen
 set scrolloff=3
@@ -30,6 +31,10 @@ set ruler
 
 set directory=~/.vim/swap,.,/tmp
 set backupdir=~/.vim/backup,.,/tmp
+set undodir=~/.vim/undo,.,/tmp
+set undofile
+set undolevels=1000
+set undoreload=10000
 
 syntax on
 filetype plugin indent on
@@ -40,6 +45,8 @@ set nofoldenable
 set foldlevel=0
 
 set wildignore=*/cache/*,*/app/cache/*,*/web/bundles/*,.git,.svn
+
+autocmd BufRead *.html.twig set filetype=htmltwig
 
 let mapleader=","
 map <Left> <Nop>
@@ -66,6 +73,6 @@ let g:syntastic_phpmd_disable=1
 "autocmd BufWritePost *.less silent !lessc "<afile>:p" "<afile>:p:h/../css/<afile>:t:r.css"
 
 " fix MacOSX import error
-python import sys; sys.path.append("/Library/Python/2.7/site-packages")
+"python import sys; sys.path.append("/Library/Python/2.7/site-packages")
 source ~/.vim/bundle/powerline/powerline/bindings/vim/plugin/source_plugin.vim
 python from powerline.bindings.vim import source_plugin; source_plugin()
