@@ -64,3 +64,8 @@ let g:syntastic_phpmd_disable=1
 
 " auto-compile less files
 "autocmd BufWritePost *.less silent !lessc "<afile>:p" "<afile>:p:h/../css/<afile>:t:r.css"
+
+" fix MacOSX import error
+python import sys; sys.path.append("/Library/Python/2.7/site-packages")
+source ~/.vim/bundle/powerline/powerline/bindings/vim/plugin/source_plugin.vim
+python from powerline.bindings.vim import source_plugin; source_plugin()
