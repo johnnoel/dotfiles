@@ -71,6 +71,7 @@ let g:syntastic_phpmd_disable=1
 
 " auto-compile less files
 "autocmd BufWritePost *.less silent !lessc "<afile>:p" "<afile>:p:h/../css/<afile>:t:r.css"
+"autocmd BufWritePost *.coffee silent !coffee -c -o "<afile>:p:h/../js/" "<afile>:p"
 
 " fix MacOSX import error
 "python import sys; sys.path.append("/Library/Python/2.7/site-packages")
