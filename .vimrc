@@ -37,6 +37,7 @@ set undolevels=1000
 set undoreload=10000
 
 syntax on
+colorscheme jellybeans
 filetype plugin indent on
 
 set foldmethod=indent
@@ -75,5 +76,9 @@ let g:syntastic_phpmd_disable=1
 
 " fix MacOSX import error
 "python import sys; sys.path.append("/Library/Python/2.7/site-packages")
-source ~/.vim/bundle/powerline/powerline/bindings/vim/plugin/source_plugin.vim
-python from powerline.bindings.vim import source_plugin; source_plugin()
+
+" powerline without modified fonts always looks obnoxious on terminals
+if has("gui_running")
+    source ~/.vim/bundle/powerline/powerline/bindings/vim/plugin/source_plugin.vim
+    python from powerline.bindings.vim import source_plugin; source_plugin()
+endif
