@@ -28,4 +28,4 @@
 	url = https://github.com/othree/html5.vim.git
 [submodule ".vim/bundle/vim-twig"]
 	path = .vim/bundle/vim-twig
-	url = https://github.com/beyondwords/vim-twig.git
+	url = https://github.com/evidens/vim-twig.git
