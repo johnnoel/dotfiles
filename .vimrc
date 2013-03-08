@@ -47,8 +47,6 @@ set foldlevel=0
 
 set wildignore=*/cache/*,*/app/cache/*,*/web/bundles/*,.git,.svn
 
-autocmd BufRead *.html.twig set filetype=htmltwig
-
 let mapleader=","
 map <Left> <Nop>
 map <Right> <Nop>
