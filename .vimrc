@@ -68,6 +68,10 @@ set pastetoggle=<F2>
 let g:syntastic_phpcs_disable=1
 let g:syntastic_phpmd_disable=1
 
+" ctrl-p
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_working_path_mode=0
+
 " auto-compile less files
 "autocmd BufWritePost *.less silent !lessc "<afile>:p" "<afile>:p:h/../css/<afile>:t:r.css"
 "autocmd BufWritePost *.coffee silent !coffee -c -o "<afile>:p:h/../js/" "<afile>:p"
