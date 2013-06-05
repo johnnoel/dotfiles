@@ -1,2 +1,7 @@
 [color]
     ui = true
+[user]
+	name = John Noel
+	email = chaostangent@gmail.com
+[push]
+	default = simple
