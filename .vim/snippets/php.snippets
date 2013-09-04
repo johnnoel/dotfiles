@@ -1,0 +1,12 @@
+snippet php
+	<?php
+	/**
+	 * ${1}
+	 *
+	 * @version 1.0
+	 * @author John Noel <john.noel@${2:rckt.co.uk}>
+	 * @package ${3}
+	 * @subpackage ${4}
+	 */
+
+	 namespace `substitute(substitute(expand('%:h'), '^src\/', '', 'g'), '\/', '\\', 'g')`
