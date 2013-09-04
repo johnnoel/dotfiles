@@ -79,8 +79,7 @@ let g:ctrlp_working_path_mode=0
 " fix MacOSX import error
 "python import sys; sys.path.append("/Library/Python/2.7/site-packages")
 
-" powerline without modified fonts always looks obnoxious on terminals
+" assume that if you have a gui you can use Powerline fonts
 if has("gui_running")
-    source ~/.vim/bundle/powerline/powerline/bindings/vim/plugin/source_plugin.vim
-    python from powerline.bindings.vim import source_plugin; source_plugin()
+    let g:airline_powerline_fonts=1
 endif
