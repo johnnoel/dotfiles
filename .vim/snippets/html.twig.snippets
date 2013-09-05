@@ -1,0 +1,25 @@
+snippet html
+	<!DOCTYPE html>
+	<html lang="en-GB">
+		<head>
+			<meta charset="utf-8">
+			<title>{% block title %}{% endblock %}{% if block('title') is not empty %} : {% endif %}${1}</title>
+
+			{% stylesheets '${2:less/$1.less}' filter='?uglifycss' %}
+			<link rel="stylesheet" media="all" href="{{ asset_url }}">
+			{% endstylesheets %}
+			{% block stylesheets %}{% endblock %}
+
+			{% javascripts 'js/lib/modernizr.js' 'js/webfonts.js' filter='?uglifyjs2' %}
+			<script src="{{ asset_url }}"></script>
+			{% endjavascripts %}
+		</head>
+		<body>
+			{% block body %}{% endblock %}
+
+			{% javascripts 'js/lib/jquery.js' filter='?uglifyjs2' %}
+			<script src="{{ asset_url }}"></script>
+			{% endjavascripts %}
+			{% block javascripts %}{% endblock %}
+		</body>
+	</html>
