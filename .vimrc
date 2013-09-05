@@ -77,6 +77,16 @@ let g:ctrlp_working_path_mode=0
 "autocmd BufWritePost *.less silent !lessc "<afile>:p" "<afile>:p:h/../css/<afile>:t:r.css"
 "autocmd BufWritePost *.coffee silent !coffee -c -o "<afile>:p:h/../js/" "<afile>:p"
 
+" trim trailing whatspace
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfunction
+
+autocmd FileType php,less,css,html,html.twig,javascript autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
 " fix MacOSX import error
 "python import sys; sys.path.append("/Library/Python/2.7/site-packages")
 
