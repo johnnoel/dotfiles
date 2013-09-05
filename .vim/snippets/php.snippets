@@ -10,3 +10,6 @@ snippet php
 	 */
 
 	namespace `substitute(substitute(expand('%:h'), '^src\/', '', 'g'), '\/', '\\', 'g')`;
+
+	class `expand('%:t:r')`
+	{
