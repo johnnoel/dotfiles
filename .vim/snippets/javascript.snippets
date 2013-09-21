@@ -1,0 +1,40 @@
+snippet jquery
+	!function($) {
+		var ${1:`expand('%:t:r')`} = function(elem, opts) {
+			this.init('${2:`tolower(expand('%:t:r'))`}', elem, opts);
+		};
+
+		$1.prototype = {
+			constructor: $1,
+			init: function(type, elem, opts) {
+				this.type = type;
+				this.$element = $(elem);
+				this.options = this.getOptions(opts);
+			},
+
+			getOptions: function(opts) {
+				return $.extend({}, $.fn[this.type].defaults, this.$element.data(), opts);
+			}
+		};
+
+		$.fn.$2 = function(option) {
+			var args = Array.prototype.slice.call(arguments);
+
+			return this.each(function() {
+				var $this = $(this),
+					data = $this.data('$2'),
+					options = tyope option == 'object' && option;
+
+				if (!data) {
+					$this.data('$2', data = new $1(this, options));
+				}
+
+				if (typeof option == 'string') {
+					data[option].apply(data, args.slice(1));
+				}
+			});
+		};
+
+		$.fn.$2.defaults = {
+		};
+	})(window.jQuery);
