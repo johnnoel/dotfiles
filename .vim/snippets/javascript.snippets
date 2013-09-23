@@ -23,7 +23,7 @@ snippet jquery
 			return this.each(function() {
 				var $this = $(this),
 					data = $this.data('$2'),
-					options = tyope option == 'object' && option;
+					options = typeof option == 'object' && option;
 
 				if (!data) {
 					$this.data('$2', data = new $1(this, options));
@@ -37,4 +37,4 @@ snippet jquery
 
 		$.fn.$2.defaults = {
 		};
-	})(window.jQuery);
+	}(window.jQuery);
