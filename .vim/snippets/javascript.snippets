@@ -18,7 +18,12 @@ snippet jquery
 		};
 
 		$.fn.$2 = function(option) {
-			var args = Array.prototype.slice.call(arguments);
+			var args = Array.prototype.slice.call(arguments, 1);
+
+			if (typeof option === 'string' && $.inArray(option, []) !== -1) {
+				var data = this.data('$2');
+				return data[option].apply(data, args);
+			}
 
 			return this.each(function() {
 				var $this = $(this),
@@ -30,7 +35,7 @@ snippet jquery
 				}
 
 				if (typeof option == 'string') {
-					data[option].apply(data, args.slice(1));
+					data[option].apply(data, args);
 				}
 			});
 		};
