@@ -1,20 +1,24 @@
 snippet php
 	<?php
-	/**
-	 * ${1}
-	 *
-	 * @version 1.0
-	 * @author John Noel <john.noel@${2:rckt.co.uk}>
-	 * @package ${3}
-	 * @subpackage ${4}
-	 */
 
 	namespace `substitute(substitute(expand('%:h'), '^src\/', '', 'g'), '\/', '\\', 'g')`;
 
+	/**
+	 * ${1}
+	 *
+	 * @author John Noel <john.noel@${2:rckt.co.uk}>
+	 * @package ${3}
+	 */
 	class `expand('%:t:r')`
 	{
 
 snippet getset
+	/**
+	 * Set $1
+	 *
+	 * @param string $$2
+	 * @return
+	 */
 	public function set${1:}($${2:})
 	{
 		$this->$2 = $$2;
@@ -22,6 +26,11 @@ snippet getset
 		return $this;
 	}
 
+	/**
+	 * Get $1
+	 *
+	 * @return
+	 */
 	public function get$1()
 	{
 		return $this->$2;
