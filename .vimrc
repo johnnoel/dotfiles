@@ -53,11 +53,17 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
+map <Home> <Nop>
+map <End> <Nop>
+map <Del> <Nop>
 
 imap <Left> <Nop>
 imap <Right> <Nop>
 imap <Up> <Nop>
 imap <Down> <Nop>
+imap <Home> <Nop>
+imap <End> <Nop>
+imap <Del> <Nop>
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
