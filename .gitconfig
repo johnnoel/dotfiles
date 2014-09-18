@@ -5,3 +5,5 @@
 	email = chaostangent@gmail.com
 [push]
 	default = simple
+[core]
+	excludesfile = /Users/johnnoel/.gitignore
