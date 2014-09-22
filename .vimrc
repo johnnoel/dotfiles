@@ -79,6 +79,7 @@ let g:syntastic_phpmd_disable=1
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_max_depth=40
+let g:ctrlp_max_files=100000
 
 " auto-compile less files
 "autocmd BufWritePost *.less silent !lessc "<afile>:p" "<afile>:p:h/../css/<afile>:t:r.css"
@@ -92,12 +93,14 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
+" smart indent when entering insert mode with i on empty lines
+function! IndentWithI()
+    if len(getline('.')) == 0
+        return "\"_ddO"
+    else
+        return "i"
+    endif
+endfunction
+nnoremap <expr> i IndentWithI()
+
 autocmd FileType php,less,css,html,html.twig,javascript autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
-" fix MacOSX import error
-"python import sys; sys.path.append("/Library/Python/2.7/site-packages")
-
-" assume that if you have a gui you can use Powerline fonts
-if has("gui_running")
-    let g:airline_powerline_fonts=1
-endif

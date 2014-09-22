@@ -1,2 +1,3 @@
-"set guifont=Menlo\ Regular\ for\ Powerline:h12 
-set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ 9
+let g:airline_powerline_fonts=1
+
+set guifont=Menlo\ Regular\ for\ Powerline:h12 
