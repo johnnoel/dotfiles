@@ -1,11 +1,17 @@
 snippet jquery
+	/**
+	 * ${1}
+	 *
+	 * @author John Noel <john.noel@${2:rckt.co.uk}>
+	 * @package ${3}
+	 */
 	!function($) {
-		var ${1:`expand('%:t:r')`} = function(elem, opts) {
-			this.init('${2:`tolower(expand('%:t:r'))`}', elem, opts);
+		var ${4:`expand('%:t:r')`} = function(elem, opts) {
+			this.init('${5:`tolower(expand('%:t:r'))`}', elem, opts);
 		};
 
-		$1.prototype = {
-			constructor: $1,
+		$4.prototype = {
+			constructor: $4,
 			init: function(type, elem, opts) {
 				this.type = type;
 				this.$element = $(elem);
@@ -17,21 +23,21 @@ snippet jquery
 			}
 		};
 
-		$.fn.$2 = function(option) {
+		$.fn.$5 = function(option) {
 			var args = Array.prototype.slice.call(arguments, 1);
 
 			if (typeof option === 'string' && $.inArray(option, []) !== -1) {
-				var data = this.data('$2');
+				var data = this.data('$5');
 				return data[option].apply(data, args);
 			}
 
 			return this.each(function() {
 				var $this = $(this),
-					data = $this.data('$2'),
+					data = $this.data('$5'),
 					options = typeof option == 'object' && option;
 
 				if (!data) {
-					$this.data('$2', data = new $1(this, options));
+					$this.data('$5', data = new $4(this, options));
 				}
 
 				if (typeof option == 'string') {
@@ -40,6 +46,6 @@ snippet jquery
 			});
 		};
 
-		$.fn.$2.defaults = {
+		$.fn.$5.defaults = {
 		};
 	}(window.jQuery);
