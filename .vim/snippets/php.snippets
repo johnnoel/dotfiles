@@ -17,6 +17,10 @@ snippet form
 
 	namespace `substitute(substitute(expand('%:h'), '^src\/', '', 'g'), '\/', '\\', 'g')`;
 
+	use Symfony\Component\Form\AbstractType,
+		Symfony\Component\Form\FormBuilderInterface;
+	use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
 	/**
 	 * ${1} form
 	 *
