@@ -31,6 +31,7 @@ snippet form
 	{
 		public function buildForm(FormBuilderInterface $builder, array $options)
 		{
+			$builder->add(${6});
 		}
 
 		public function getName()
@@ -50,8 +51,8 @@ snippet getset
 	/**
 	 * Set $1
 	 *
-	 * @param string $$2
-	 * @return
+	 * @param ${3:} $$2
+	 * @return `expand('%:t:r')`
 	 */
 	public function set${1:}($${2:})
 	{
@@ -63,7 +64,7 @@ snippet getset
 	/**
 	 * Get $1
 	 *
-	 * @return
+	 * @return $3
 	 */
 	public function get$1()
 	{
