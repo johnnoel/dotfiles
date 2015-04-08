@@ -46,7 +46,7 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=0
 
-set wildignore=*/cache/*,*/app/cache/*,*/web/bundles/*,.git,.svn
+set wildignore=.git,.svn
 
 let mapleader=","
 map <Left> <Nop>
