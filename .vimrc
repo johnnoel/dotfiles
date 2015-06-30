@@ -46,7 +46,7 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=0
 
-set wildignore=.git,.svn
+set wildignore=.git,.svn,node_modules
 
 let mapleader=","
 map <Left> <Nop>
