@@ -47,6 +47,25 @@ snippet form
 		}
 	}
 
+snippet controller
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '^src\/', '', 'g'), '\/', '\\', 'g')`;
+
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
+		Sensio\Bundle\FrameworkExtraBundle\Configuration\Method,
+		Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+
+	/**
+	 * ${1}
+	 *
+	 * @author John Noel <john.noel@${2:rckt.co.uk}>
+	 * @package ${3}
+	 */
+	class `expand('%:t:r')` extends Controller
+	{
+
 snippet getset
 	/**
 	 * Set $2

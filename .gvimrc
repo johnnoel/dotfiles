@@ -1,4 +1,5 @@
-set guifont=Menlo\ Regular\ for\ Powerline:h12 
+set guifont=Menlo\ for\ Powerline\ 9
+set guioptions=aegirLt
 
 let g:airline_powerline_fonts = 1
 
