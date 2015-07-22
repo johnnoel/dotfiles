@@ -12,6 +12,18 @@ snippet php
 	class `expand('%:t:r')`
 	{
 
+snippet test
+	<?php
+
+	/**
+	 * ${1} test
+	 *
+	 * @author John Noel <john.noel@${2:rckt.co.uk}>
+	 * @package ${3}
+	 */
+	class `expand('%:t:r')` extends PHPUnit_Framework_TestCase
+	{
+
 snippet form
 	<?php
 
