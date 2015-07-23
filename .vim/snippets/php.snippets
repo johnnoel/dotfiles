@@ -24,6 +24,30 @@ snippet test
 	class `expand('%:t:r')` extends PHPUnit_Framework_TestCase
 	{
 
+snippet entity
+	<?php
+
+	namespace `substitute(substitute(expand('%:h'), '^src\/', '', 'g'), '\/', '\\', 'g')`;
+
+	use Doctrine\ORM\Mapping as ORM;
+
+	/**
+	 * ${1}
+	 *
+	 * @author John Noel <john.noel@${2:rckt.co.uk}>
+	 * @package ${3}
+	 * @ORM\Entity
+	 * @ORM\Table(name="${4}")
+	 */
+	class `expand('%:t:r')`
+	{
+		/**
+		 * @ORM\Id
+		 * @ORM\Column(type="integer")
+		 * @ORM\GeneratedValue(strategy="IDENTITY")
+		 */
+		private $id;
+
 snippet form
 	<?php
 
