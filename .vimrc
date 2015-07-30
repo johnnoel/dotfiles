@@ -81,6 +81,9 @@ let g:ctrlp_working_path_mode=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=100000
 
+" jsx
+let g:jsx_ext_required=0
+
 " auto-compile less files
 "autocmd BufWritePost *.less silent !lessc "<afile>:p" "<afile>:p:h/../css/<afile>:t:r.css"
 "autocmd BufWritePost *.coffee silent !coffee -c -o "<afile>:p:h/../js/" "<afile>:p"
