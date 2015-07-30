@@ -55,7 +55,7 @@ snippet form
 
 	use Symfony\Component\Form\AbstractType,
 		Symfony\Component\Form\FormBuilderInterface;
-	use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+	use Symfony\Component\OptionsResolver\OptionsResolver;
 
 	/**
 	 * ${1} form
@@ -75,7 +75,7 @@ snippet form
 			return '${4}';
 		}
 
-		public function setDefaultOptions(OptionsResolverInterface $resolver)
+		public function configureOptions(OptionsResolver $resolver)
 		{
 			$resolver->setDefaults([
 				'data_class' => '${5}',
