@@ -73,6 +73,7 @@ set pastetoggle=<F2>
 " unset the ridiculous 'style' warnings for syntastic
 let g:syntastic_phpcs_disable=1
 let g:syntastic_phpmd_disable=1
+let g:syntastic_javascript_checkers=['']
 
 " ctrl-p
 let g:ctrlp_match_window_reversed=0
@@ -86,7 +87,6 @@ if executable('ag')
         \ --ignore .git
         \ --ignore .svn
         \ --ignore .DS_Store
-        \ --ignore "app/cache/**/*"
         \ -g ""'
 endif
 
