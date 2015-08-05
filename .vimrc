@@ -21,7 +21,6 @@ set showtabline=2
 set number
 set numberwidth=5
 set colorcolumn=80
-set shell=bash
 set switchbuf=useopen
 set scrolloff=3
 set showcmd
@@ -80,6 +79,16 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=100000
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+        \ --ignore .git
+        \ --ignore .svn
+        \ --ignore .DS_Store
+        \ --ignore "app/cache/**/*"
+        \ -g ""'
+endif
 
 " jsx
 let g:jsx_ext_required=0
@@ -97,3 +106,4 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 autocmd FileType php,less,css,html,html.twig,javascript autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+

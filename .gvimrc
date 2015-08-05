@@ -16,5 +16,5 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 if has("gui_macvim")
-    source .mvimrc
+    source %:p:h/.mvimrc
 endif
