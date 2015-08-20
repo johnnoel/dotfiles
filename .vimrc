@@ -80,13 +80,11 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=100000
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+"let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 if executable('ag')
     let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-        \ --ignore .git
-        \ --ignore .svn
-        \ --ignore .DS_Store
+        \ --skip-vcs-ignores
         \ -g ""'
 endif
 
