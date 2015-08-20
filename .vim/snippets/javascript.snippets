@@ -49,3 +49,48 @@ snippet jquery
 		$.fn.$5.defaults = {
 		};
 	}(window.jQuery);
+
+snippet reflux-actions
+	import Reflux from 'reflux';
+
+	/**
+	 * ${1}
+	 *
+	 * @author John Noel <john.noel@${2:rckt.co.uk}>
+	 * @package ${3}
+	 */
+	let ${4}Actions = Reflux.createActions([
+	]);
+
+	export default $4Actions;
+
+snippet reflux-store
+	import Reflux from 'reflux';
+	import Actions from '../actions/$4Actions';
+
+	/**
+	 * ${1}
+	 *
+	 * @author John Noel <john.noel@${2:rckt.co.uk}>
+	 * @package ${3}
+	 */
+	let ${4}Store = Reflux.createStore({
+		listenables: [ Actions ]
+	});
+
+	export default $4Store;
+
+snippet react
+	import React from 'react';
+
+	/**
+	 * ${1}
+	 *
+	 * @author John Noel <john.noel@${2:rckt.co.uk}>
+	 * @package ${3}
+	 */
+	export default class ${4} extends React.Component {
+		render() {
+			return <div />;
+		}
+	}
