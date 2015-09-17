@@ -125,3 +125,61 @@ snippet getset
 	{
 		return $this->$2;
 	}
+
+snippet addremove
+	/**
+	 * Set $2
+	 *
+	 * @param array|ArrayCollection $$2
+	 * @return `expand('%:t:r')`
+	 */
+	public function set${1:}($${2:})
+	{
+		if (is_array($$2)) {
+			$teams = new ArrayCollection($$2);
+		}
+
+		if (!($$2 instanceof ArrayCollection)) {
+			throw new \InvalidArgumentException('$$2 should be an array or an instance of ArrayCollection');
+		}
+
+		$this->$2 = $$2;
+
+		return $this;
+	}
+
+	/**
+	 * Get $2
+	 *
+	 * @return ArrayCollection
+	 */
+	public function get$1()
+	{
+		return $this->$2;
+	}
+
+	/**
+	 * Add $5
+	 *
+	 * @param $4 $$5
+	 * @return `expand('%:t:r')`
+	 */
+	public function add${3:}(${4:} $${5:})
+	{
+		$this->$2[] = $$5;
+
+		return $this;
+	}
+
+	/**
+	 * Remove $5
+	 *
+	 * @param $4 $$5
+	 * @return `expand('%:t:r')`
+	 */
+	public function remove$3($4 $$5)
+	{
+		$this->$2->removeElement($$5);
+
+		return $this;
+	}
