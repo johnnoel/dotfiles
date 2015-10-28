@@ -4,6 +4,7 @@
 \set HISTCONTROL ignorespace
 \set HISTFILE ~/.psql_history- :DBNAME
 \set HISTSIZE 20000
+\set COMP_KEYWORD_CASE upper
 
 \pset null '[NULL]'
 \set IGNOREEOF 5
