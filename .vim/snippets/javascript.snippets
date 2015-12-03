@@ -1,87 +1,5 @@
-snippet jquery
-	/**
-	 * ${1}
-	 *
-	 * @author John Noel <john.noel@${2:rckt.co.uk}>
-	 * @package ${3}
-	 */
-	!function($) {
-		var ${4:`expand('%:t:r')`} = function(elem, opts) {
-			this.init('${5:`tolower(expand('%:t:r'))`}', elem, opts);
-		};
-
-		$4.prototype = {
-			constructor: $4,
-			init: function(type, elem, opts) {
-				this.type = type;
-				this.$element = $(elem);
-				this.options = this.getOptions(opts);
-			},
-
-			getOptions: function(opts) {
-				return $.extend({}, $.fn[this.type].defaults, this.$element.data(), opts);
-			}
-		};
-
-		$.fn.$5 = function(option) {
-			var args = Array.prototype.slice.call(arguments, 1);
-
-			if (typeof option === 'string' && $.inArray(option, []) !== -1) {
-				var data = this.data('$5');
-				return data[option].apply(data, args);
-			}
-
-			return this.each(function() {
-				var $this = $(this),
-					data = $this.data('$5'),
-					options = typeof option == 'object' && option;
-
-				if (!data) {
-					$this.data('$5', data = new $4(this, options));
-				}
-
-				if (typeof option == 'string') {
-					data[option].apply(data, args);
-				}
-			});
-		};
-
-		$.fn.$5.defaults = {
-		};
-	}(window.jQuery);
-
-snippet reflux-actions
-	import Reflux from 'reflux';
-
-	/**
-	 * ${1}
-	 *
-	 * @author John Noel <john.noel@${2:rckt.co.uk}>
-	 * @package ${3}
-	 */
-	let ${4}Actions = Reflux.createActions([
-	]);
-
-	export default $4Actions;
-
-snippet reflux-store
-	import Reflux from 'reflux';
-	import Actions from '../actions/$4Actions';
-
-	/**
-	 * ${1}
-	 *
-	 * @author John Noel <john.noel@${2:rckt.co.uk}>
-	 * @package ${3}
-	 */
-	let ${4}Store = Reflux.createStore({
-		listenables: [ Actions ]
-	});
-
-	export default $4Store;
-
 snippet react
-	import React from 'react';
+	import React, { Components, PropTypes } from 'react';
 
 	/**
 	 * ${1}
@@ -89,8 +7,10 @@ snippet react
 	 * @author John Noel <john.noel@${2:rckt.co.uk}>
 	 * @package ${3}
 	 */
-	export default class ${4} extends React.Component {
+	class ${4:} extends Component {
 		render() {
 			return <div />;
 		}
 	}
+
+	export default $4;
