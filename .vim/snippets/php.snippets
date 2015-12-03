@@ -136,7 +136,7 @@ snippet addremove
 	public function set${1:}($${2:})
 	{
 		if (is_array($$2)) {
-			$teams = new ArrayCollection($$2);
+			$$2 = new ArrayCollection($$2);
 		}
 
 		if (!($$2 instanceof ArrayCollection)) {
