@@ -15,13 +15,17 @@ snippet php
 snippet test
 	<?php
 
+	namespace Tests\\`substitute(substitute(expand('%:h'), '^tests\/', '', 'g'), '\/', '\\', 'g')`;
+
+	use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+
 	/**
 	 * ${1} test
 	 *
 	 * @author John Noel <john.noel@${2:rckt.co.uk}>
 	 * @package ${3}
 	 */
-	class `expand('%:t:r')` extends PHPUnit_Framework_TestCase
+	class `expand('%:t:r')` extends WebTestCase
 	{
 
 snippet entity
