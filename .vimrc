@@ -82,12 +82,6 @@ let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=100000
 "let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
-if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-        \ --skip-vcs-ignores
-        \ -g ""'
-endif
-
 " jsx
 let g:jsx_ext_required=0
 
