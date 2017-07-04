@@ -6,7 +6,7 @@ snippet php
 	/**
 	 * ${1}
 	 *
-	 * @author John Noel <john.noel@${2:rckt.co.uk}>
+	 * @author John Noel <john.noel@${2:joipolloi.com}>
 	 * @package ${3}
 	 */
 	class `expand('%:t:r')`
@@ -22,7 +22,7 @@ snippet test
 	/**
 	 * ${1} test
 	 *
-	 * @author John Noel <john.noel@${2:rckt.co.uk}>
+	 * @author John Noel <john.noel@${2:joipolloi.com}>
 	 * @package ${3}
 	 */
 	class `expand('%:t:r')` extends WebTestCase
@@ -69,16 +69,25 @@ snippet form
 	 */
 	class `expand('%:t:r')` extends AbstractType
 	{
+		/**
+		 * {@inheritDoc}
+		 */
 		public function buildForm(FormBuilderInterface $builder, array $options)
 		{
 			$builder->add(${6});
 		}
 
-		public function getName()
+		/**
+		 * {@inheritDoc}
+		 */
+		public function getBlockPrefix()
 		{
 			return '${4}';
 		}
 
+		/**
+		 * {@inheritDoc}
+		 */
 		public function configureOptions(OptionsResolver $resolver)
 		{
 			$resolver->setDefaults([
