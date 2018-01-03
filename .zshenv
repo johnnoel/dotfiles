@@ -1,1 +1,1 @@
-export PATH="/Users/johnnoel/.rvm/gems/ruby-1.9.3-p448/bin:/Users/johnnoel/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/johnnoel/.rvm/rubies/ruby-1.9.3-p448/bin:/Users/johnnoel/.rvm/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin"
+export PATH="/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
