@@ -40,18 +40,19 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class `!v sniphpets#basename()` extends AbstractController
 {
-	${0}
+    ${0}
 }
 endsnippet
 
 snippet sfaction "Symfony / Controller / Action" b
 /**
  * @param Request $request
+ * @return Response
  *
- * @Route("/${1}", methods="GET", name="${2}")
+ * @Route("/${1}", methods={"${2:GET}"}, name="${3}")
  */
-public function ${3:index}(Request \$request) : Response
+public function ${4:index}(Request \$request) : Response
 {
-	${0}
+    ${0}
 }
 endsnippet
