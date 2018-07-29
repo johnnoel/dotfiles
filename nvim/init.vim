@@ -1,7 +1,7 @@
 if has('win32')
-	call plug#begin('$LOCALAPPDATA/nvim/plugged')
+    call plug#begin('$LOCALAPPDATA/nvim/plugged')
 else
-	call plug#begin('~/.local/share/nvim/plugged')
+    call plug#begin('~/.local/share/nvim/plugged')
 endif
 
 Plug 'nanotech/jellybeans.vim'
@@ -21,6 +21,7 @@ call plug#end()
 
 colorscheme jellybeans
 
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -62,9 +63,9 @@ imap <Del> <Nop>
 
 " should probably set a directory separator variable rather than this
 if has('win32')
-	cnoremap %% <C-R>=expand('%:h').'\'<cr>
+    cnoremap %% <C-R>=expand('%:h').'\'<cr>
 else
-	cnoremap %% <C-R>=expand('%:h').'/'<cr>
+    cnoremap %% <C-R>=expand('%:h').'/'<cr>
 endif
 
 let g:ctrlp_match_window_reversed=0
