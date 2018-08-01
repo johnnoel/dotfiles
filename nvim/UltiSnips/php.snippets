@@ -21,6 +21,7 @@ namespace `!v sniphpets#namespace()`;
  */
 class ${3:`!p snip.rv=snip.basename`}
 {
+    ${0}
 }
 endsnippet
 
@@ -55,4 +56,42 @@ public function ${4:index}(Request \$request) : Response
 {
     ${0}
 }
+endsnippet
+
+snippet sfform "Symfony form" b
+<?php
+
+namespace `!v sniphpets#namespace()`;
+
+use Symfony\Component\Form\{AbstractType,FormBuilderInterface};
+use Symfony\Component\Form\Extension\Core\Type\{TextType};
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use App\Form\Model\\${3};
+
+/**
+ * ${1}
+ *
+ * @author ${2:`!v g:snips_author`}
+ */
+class `!v sniphpets#basename()` extends AbstractType
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add(${0});
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => $3::class,
+        ]);
+    }
+}
+
 endsnippet
