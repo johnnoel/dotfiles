@@ -72,6 +72,7 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=100000
+let g:ctrlp_custom_ignore='\v[\/](node_modules|var)$'
 
 let g:syntastic_phpcs_disable=1
 let g:syntastic_phpmd_disable=1
